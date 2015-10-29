@@ -1,0 +1,16 @@
+<:Body>
+  <p>{{ _title }}</p>
+
+  <button e-click="play(attrs.notes)">Play</button>
+
+  <div class="form-group">
+    <label>volume</label>
+    <input e-mousemove="set_volume" type="range" name="{{ _title }}_volume" min="0" max="100" value="{{ _volume }}">
+  </div>
+
+  <select e-change="set_effect" name="{{ _title }}_effect" value="{{ _effect }}">
+    <option value="sine">sine</option>
+    <option value="square">square</option>
+    <option value="sawtooth">sawtooth</option>
+    <option value="triangle">triangle</option>
+  </select>

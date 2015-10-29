@@ -1,3 +1,16 @@
+PATH
+  remote: ../opal-browser
+  specs:
+    opal-browser (0.2.0)
+      opal
+      paggio
+
+PATH
+  remote: ../opal-music
+  specs:
+    opal-music (0.1.0)
+      opal (>= 0.7.0, < 0.9.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -69,6 +82,7 @@ GEM
       tilt (>= 1.4)
     opal-rspec (0.4.3)
       opal (>= 0.7.0, < 0.9)
+    paggio (0.2.5)
     poltergeist (1.6.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -167,6 +181,8 @@ DEPENDENCIES
   csso-rails (~> 0.3.4)
   image_optim
   image_optim_pack
+  opal-browser!
+  opal-music!
   opal-rspec (~> 0.4.2)
   poltergeist (~> 1.6.0)
   rbnacl

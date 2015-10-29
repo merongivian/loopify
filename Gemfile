@@ -22,6 +22,11 @@ gem 'volt-mailer', '~> 0.1.1'
 # (optional, if you don't need encryption, disable in app.rb and remove)
 #
 # Message Bus encryption is not supported on Windows at the moment.
+#
+gem 'opal-music', path: '../opal-music'
+
+gem 'opal-browser', path: '../opal-browser'
+
 platform :ruby, :jruby do
   gem 'rbnacl', require: false
   gem 'rbnacl-libsodium', require: false
