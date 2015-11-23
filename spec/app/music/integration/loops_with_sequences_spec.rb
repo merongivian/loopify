@@ -33,10 +33,8 @@ describe 'loop with sequences', type: :feature do
     end
 
     it "shows current loop sequences" do
-      within '#sequences' do
-        expect(page).to have_content bass_sequence._title
-        expect(page).to have_content lead_sequence._title
-      end
+      expect(page).to have_content bass_sequence._title
+      expect(page).to have_content lead_sequence._title
     end
 
     it 'shows the volume for each sequence' do

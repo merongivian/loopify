@@ -1,0 +1,53 @@
+$elemens-spacing: 30px;
+
+body {
+  background: #f9f9f9;
+}
+
+.container {
+  max-width: 1160px;
+  margin-bottom: $elemens-spacing;
+}
+
+.header, .footer {
+  margin-left: $elemens-spacing;
+  margin-right: $elemens-spacing;
+}
+
+.sequence {
+  border-radius: 25px;
+  border: 2px solid #23527C;
+  padding: $elemens-spacing;
+
+  p {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  a.play {
+    position: absolute;
+  }
+}
+
+.sequence-wrapper {
+  padding: $elemens-spacing / 2;
+}
+
+$volume-width: 140px;
+
+.volume {
+  transform: rotateZ(90deg);
+}
+
+.volume_wrapper {
+  /*make actual width of rotated volume input shorter*/
+  width: $volume-width / 2;
+  height: 0px;
+  float: right;
+}
+
+input.volume {
+  width: $volume-width;
+  /*FIXME: this only works with volume-width = 140px*/
+  margin-top: -25px;
+}

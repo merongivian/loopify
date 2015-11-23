@@ -1,16 +1,20 @@
 <:Body>
-  <p>{{ _title }}</p>
+  <div class="sequence-wrapper col-md-4 col-sm-6">
+    <div class="sequence">
+      <a href="#" e-click="play(attrs.notes)" title="Play" class="play"></a>
 
-  <button e-click="play(attrs.notes)">Play</button>
+      <p>{{ _title }}</p>
+      <!--<button e-click="stop">Stop</button>-->
 
-  <div class="form-group">
-    <label>volume</label>
-    <input e-mousemove="set_volume" type="range" name="{{ _title }}_volume" min="0" max="100" value="{{ _volume }}">
+      <div class="volume_wrapper">
+        <input e-mousemove="set_volume" class="volume" type="range" name="{{ _title }}_volume" min="0" max="100" value="{{ _volume }}">
+      </div>
+
+      <select e-change="set_effect" name="{{ _title }}_effect" value="{{ _effect }}">
+        <option value="sine">sine</option>
+        <option value="square">square</option>
+        <option value="sawtooth">sawtooth</option>
+        <option value="triangle">triangle</option>
+      </select>
+    </div>
   </div>
-
-  <select e-change="set_effect" name="{{ _title }}_effect" value="{{ _effect }}">
-    <option value="sine">sine</option>
-    <option value="square">square</option>
-    <option value="sawtooth">sawtooth</option>
-    <option value="triangle">triangle</option>
-  </select>
