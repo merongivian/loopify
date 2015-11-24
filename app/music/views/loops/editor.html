@@ -1,13 +1,17 @@
 <:Title>
   Loop Editor
 <:Body>
-  <!--<select name="tempo" value="{{ current_loop._tempo }}">-->
-    <!--{{ (1..100).to_a.each do |n| }}-->
-      <!--<option value="{{ n }}">{{ n }}</option>-->
-    <!--{{ end }}-->
-  <!--</select>-->
+  <div id="loop-header" />
+    <select name="tempo" value="{{ current_loop._tempo }}">
+      {{ (1..100).to_a.each do |number| }}
+        <option value="{{ number }}">{{ number }}</option>
+      {{ end }}
+    </select>
 
-  <p>{{ current_loop._title }}</p>
+    <input name="volume" type="text" value="{{ current_loop._volume }}" />
+
+    <p>{{ current_loop._title }}</p>
+  </div>
 
   {{ current_loop._sequences.each do |sequence| }}
     <:sequences:controls model="{{ sequence }}" notes="{{ [ 'D3  q', '-   h', 'D3  q', 'A2  q', '-   h', 'A2  q', 'Bb2 q', '-   h', 'Bb2 q', 'F2  h', 'A2  h' ] }}" />
