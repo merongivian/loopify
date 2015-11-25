@@ -1,13 +1,33 @@
 <:Body>
   <div class="sequence-wrapper col-md-4 col-sm-6">
     <div class="sequence">
-      <a href="#" e-click="play(attrs.notes, attrs.audio_context, attrs.tempo)" title="Play" class="play"></a>
+      <a href="#" e-click="play(attrs.audio_context, attrs.tempo)" title="Play" class="play"></a>
 
       <p>{{ _title }}</p>
       <!--<button e-click="stop">Stop</button>-->
 
       <div class="volume_wrapper">
         <input e-mousemove="set_volume" class="volume" type="range" name="{{ _title }}_volume" min="0" max="100" value="{{ _volume }}">
+      </div>
+
+      <div class="notes">
+        <select e-change="change_notes" name="quantity" value="{{ _quantity }}">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="8">8</option>
+        </select>
+
+        <div class="values">
+          {{ _notes.each_with_index do |note, index| }}
+            <select name="note{{ index }}" value="{{ note._value }}">
+              <option value="D3">D3</option>
+              <option value="Bb2">Bb2</option>
+              <option value="F3">F3</option>
+              <option value="-">-</option>
+            </select>
+          {{ end }}
+        </div>
       </div>
 
       <select e-change="set_effect" name="{{ _title }}_effect" value="{{ _effect }}">
