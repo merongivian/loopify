@@ -3,7 +3,7 @@
 <:Body>
   <div id="loop-header" />
     <select name="tempo" value="{{ current_loop._tempo }}">
-      {{ (1..100).to_a.each do |number| }}
+      {{ (1..170).to_a.each do |number| }}
         <option value="{{ number }}">{{ number }}</option>
       {{ end }}
     </select>
@@ -14,5 +14,6 @@
   </div>
 
   {{ current_loop._sequences.each do |sequence| }}
-    <:sequences:controls model="{{ sequence }}" notes="{{ [ 'D3  q', '-   h', 'D3  q', 'A2  q', '-   h', 'A2  q', 'Bb2 q', '-   h', 'Bb2 q', 'F2  h', 'A2  h' ] }}" />
+    <!--FIXME: try not to use the value method to resolve the promise-->
+    <:sequences:controls model="{{ sequence }}" audio_context="{{ audio_context }}" tempo="{{ current_loop._tempo.value }}" notes="{{ [ 'D3  q', '-   h', 'D3  q', 'A2  q', '-   h', 'A2  q', 'Bb2 q', '-   h', 'Bb2 q', 'F2  h', 'A2  h' ] }}" />
   {{ end }}

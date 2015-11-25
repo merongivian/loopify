@@ -7,11 +7,8 @@ module Music
 
     end
 
-    def play(notes)
-      ac = Browser::Audio::Context.new
-      tempo = 132
-
-      @sequence = Music::Sequence.new(ac, tempo, notes)
+    def play(notes, audio_context, tempo)
+      @sequence = Music::Sequence.new(audio_context, tempo, notes)
 
       #@sequence.staccato  = 0.05
       #@sequence.smoothing = 0.4
