@@ -8,7 +8,7 @@ module Music
     end
 
     def play(notes, audio_context, tempo)
-      @sequence = Music::Sequence.new(audio_context, tempo, notes)
+      @sequence = Music::Sequence.new(audio_context, tempo.to_i, notes)
 
       #@sequence.staccato  = 0.05
       #@sequence.smoothing = 0.4
