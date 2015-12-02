@@ -1,7 +1,7 @@
 require 'opal-browser'
 require 'opal-music'
 
-require 'music/lib/notes_parser'
+require 'music/lib/notes_format'
 
 module Music
   class SequencesController < Volt::ModelController
@@ -42,10 +42,6 @@ module Music
       _notes.reverse.each(&:destroy)
       changed_notes.each { |n| _notes.create(value: n) }
     end
-
-    #def note_at(index)
-      #notes_parser.at_index(index)
-    #end
 
     private
 

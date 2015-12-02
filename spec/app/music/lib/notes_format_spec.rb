@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'music/lib/notes_parser'
+require 'music/lib/notes_format'
 
 describe NotesFormat do
   let(:notes_format) { NotesFormat.new %w(D3 Bb2) }
