@@ -1,6 +1,6 @@
 <:Body>
   <div class="sequence-wrapper col-md-4 col-sm-6">
-    <div class="sequence">
+    <div class="sequence text-center">
       <a href="#" e-click="play(attrs.audio_context, attrs.tempo)" title="Play" class="play"></a>
 
       <p>{{ _title }}</p>
@@ -11,14 +11,14 @@
       </div>
 
       <div class="notes">
-        <select e-change="change_notes" name="quantity" value="{{ _quantity }}">
+        <select class="controls" e-change="change_notes" name="quantity" value="{{ _quantity }}">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="4">4</option>
           <option value="8">8</option>
         </select>
 
-        <div class="values">
+        <div class="controls values">
           {{ _notes.each_with_index do |note, index| }}
             <select name="note{{ index }}" value="{{ note._value }}">
               <option value="D3">D3</option>
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <select e-change="set_effect" name="{{ _title }}_effect" value="{{ _effect }}">
+      <select class="controls" e-change="set_effect" name="{{ _title }}_effect" value="{{ _effect }}">
         <option value="sine">sine</option>
         <option value="square">square</option>
         <option value="sawtooth">sawtooth</option>
