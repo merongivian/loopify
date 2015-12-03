@@ -12,7 +12,7 @@ module Music
     def play(audio_context, tempo)
       @sequence = Music::Sequence.new(audio_context,
                                       tempo.to_i,
-                                      notes_format.with_duration_for(_quantity.to_i))
+                                      notes_format.with_duration)
 
       #@sequence.staccato  = 0.05
       #@sequence.smoothing = 0.4
@@ -37,7 +37,7 @@ module Music
     end
 
     def change_notes
-      changed_notes = notes_format.for_quantity(_quantity.to_i)
+      changed_notes = notes_format.complete_notes
 
       _notes.reverse.each(&:destroy)
       changed_notes.each { |n| _notes.create(value: n) }
@@ -46,7 +46,7 @@ module Music
     private
 
     def notes_format
-      NotesFormat.new(_notes.map(&:_value))
+      NotesFormat.new(_notes.map(&:_value), _quantity.to_i)
     end
   end
 end
