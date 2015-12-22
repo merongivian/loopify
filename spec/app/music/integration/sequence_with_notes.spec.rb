@@ -41,8 +41,8 @@ describe 'sequence with notes', type: :feature do
     end
   end
 
-  describe 'changing the number of notes' do
-    it 'shows fields for adding new notes' do
+  describe 'changing notes' do
+    it 'adds new fields when quantity is changed' do
       select('4', from: 'quantity')
 
       within('.notes .values') do
@@ -53,6 +53,12 @@ describe 'sequence with notes', type: :feature do
       expect(page).to have_field 'note1', with: 'Bb2'
       expect(page).to have_field 'note2', with: '-'
       expect(page).to have_field 'note3', with: '-'
+    end
+
+    it 'changes a note' do
+      select('F3', from: 'note3')
+
+      expect(page).to have_field 'note3', with: 'F3'
     end
   end
 end

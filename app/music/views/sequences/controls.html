@@ -20,12 +20,7 @@
 
         <div class="controls values">
           {{ _notes.each_with_index do |note, index| }}
-            <select name="note{{ index }}" value="{{ note._value }}">
-              <option value="D3">D3</option>
-              <option value="Bb2">Bb2</option>
-              <option value="F3">F3</option>
-              <option value="-">-</option>
-            </select>
+            <:note index="{{ index }}" note="{{ note }}" model="{{ self.model }}" sequence="{{ sequence }}"/>
           {{ end }}
         </div>
       </div>
@@ -38,3 +33,14 @@
       </select>
     </div>
   </div>
+
+<!--TODO: since there is a problem with view scopes, the sequence has to be-->
+<!--passed manually to the each binding , but this only works when the page
+is loaded, the sequence is lost once the each binding is rerendered-->
+<:Note>
+  <select e-change="reload_sequence(attrs.sequence)" name="note{{ attrs.index }}" value="{{ attrs.note._value }}">
+    <option value="D3">D3</option>
+    <option value="Bb2">Bb2</option>
+    <option value="F3">F3</option>
+    <option value="-">-</option>
+  </select>

@@ -25,8 +25,9 @@ PATH
 PATH
   remote: ../opal-music
   specs:
-    opal-music (0.1.0)
+    opal-music (0.0.1)
       opal (>= 0.7.0, < 0.9.0)
+      opal-browser
 
 GEM
   remote: https://rubygems.org/
@@ -99,7 +100,7 @@ GEM
       tilt (>= 1.4)
     opal-rspec (0.4.3)
       opal (>= 0.7.0, < 0.9)
-    paggio (0.2.5)
+    paggio (0.2.6)
     poltergeist (1.6.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -120,7 +121,7 @@ GEM
       ffi (>= 0.5.0)
     rbnacl (3.2.0)
       ffi
-    rbnacl-libsodium (1.0.6)
+    rbnacl-libsodium (1.0.7)
       rbnacl (~> 3.0, >= 3.0.1)
     ref (1.0.5)
     rspec (3.2.0)
@@ -137,7 +138,7 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     rubyzip (1.1.7)
-    sass (3.4.19)
+    sass (3.4.20)
     selenium-webdriver (2.47.1)
       childprocess (~> 0.5)
       multi_json (~> 1.0)

@@ -1,10 +1,11 @@
-require 'opal-browser'
 require 'opal-music'
 
 require 'music/lib/notes_format'
 
 module Music
   class SequencesController < Volt::ModelController
+    attr_reader :sequence
+
     def controls
 
     end
@@ -14,6 +15,7 @@ module Music
                                       tempo.to_i,
                                       notes_format.with_duration)
 
+      #NOTE: only works when defined after play
       #@sequence.staccato  = 0.05
       #@sequence.smoothing = 0.4
       #@sequence.custom_wave_type([-0.8, 1, 0.8, 0.8, -0.8, -0.8, -1])
@@ -40,7 +42,14 @@ module Music
       changed_notes = notes_format.complete_notes
 
       _notes.reverse.each(&:destroy)
+
       changed_notes.each { |n| _notes.create(value: n) }
+      p @sequence
+      reload_sequence(@sequence)
+    end
+
+    def reload_sequence(local_sequence)
+      local_sequence.notes = notes_format.with_duration
     end
 
     private

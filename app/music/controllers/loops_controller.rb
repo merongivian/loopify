@@ -1,4 +1,4 @@
-require 'opal-browser'
+require 'browser/support'
 require 'opal-music'
 
 module Music
