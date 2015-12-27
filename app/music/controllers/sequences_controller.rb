@@ -31,7 +31,7 @@ module Music
     end
 
     def set_volume
-      @sequence.gain.gain = _volume.to_i / 100 / 2
+      @sequence.volume = _volume.to_i / 100 / 2
     end
 
     def set_effect
@@ -44,7 +44,6 @@ module Music
       _notes.reverse.each(&:destroy)
 
       changed_notes.each { |n| _notes.create(value: n) }
-      p @sequence
       reload_sequence(@sequence)
     end
 

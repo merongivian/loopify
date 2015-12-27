@@ -1,4 +1,3 @@
-require 'browser/support'
 require 'opal-music'
 
 module Music
@@ -10,7 +9,7 @@ module Music
     private
 
     def audio_context
-      @audio_context ||= Browser::Audio::Context.new
+      @audio_context ||= Music.audio_context
     end
 
     def current_loop
