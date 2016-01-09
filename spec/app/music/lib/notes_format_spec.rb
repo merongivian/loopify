@@ -9,8 +9,8 @@ describe NotesFormat do
     end
   end
 
-  describe '#complete_notes' do
-    subject { NotesFormat.new(%w(D3 Bb2), quantity).complete_notes }
+  describe '#complete' do
+    subject { NotesFormat.new(%w(D3 Bb2), quantity).complete }
 
     context 'for available notes' do
       let(:quantity) { 1 }
@@ -25,18 +25,18 @@ describe NotesFormat do
     end
   end
 
-  describe '#with_duration' do
+  describe '#add_duration' do
     let(:notes_format) { NotesFormat.new(%w(D3 Bb2), 2) }
 
     it 'uses complete_notes to get notes with their values' do
-      expect(notes_format).to receive(:complete_notes)
+      expect(notes_format).to receive(:complete)
         .and_call_original
 
-      notes_format.with_duration
+      notes_format.add_duration
     end
 
     it 'returns all notes with the same duration' do
-      expect(notes_format.with_duration).to eq ['D3 h', 'Bb2 h']
+      expect(notes_format.add_duration).to eq ['D3 h', 'Bb2 h']
     end
   end
 end

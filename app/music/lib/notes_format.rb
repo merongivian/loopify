@@ -9,13 +9,13 @@ class NotesFormat
     @quantity = quantity
   end
 
-  def with_duration
-    complete_notes.map do |note|
+  def add_duration
+    complete.map do |note|
       "#{note} #{DURATION[@quantity]}"
     end
   end
 
-  def complete_notes
+  def complete
     if @quantity > @notes.length
       @notes + ['-'] * (@quantity - @notes.length)
     else

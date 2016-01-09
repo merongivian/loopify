@@ -6,6 +6,14 @@ module Music
 
     end
 
+    def grid
+
+    end
+
+    def play_grid
+
+    end
+
     private
 
     def audio_context

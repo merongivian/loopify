@@ -55,3 +55,9 @@ input.volume {
   /*FIXME: this only works with volume-width = 140px*/
   margin-top: -25px;
 }
+
+/*----------------pattern-------------------*/
+
+#patterns-wrapper .pattern .cell {
+  display: inline-block;
+}

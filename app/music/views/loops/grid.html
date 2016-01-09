@@ -1,0 +1,12 @@
+<:Body>
+  {{ current_loop._sequences.each do |sequence| }}
+    <:cell sequence="{{ sequence }}" />
+  {{ end }}
+
+  <:Cell>
+    <div class="pattern">
+      {{ attrs.sequence._cells.each_with_index do |cell, index| }} <div class="cell">
+          <input type="checkbox" name="cell{{ index }}" class="cell" checked="{{ cell._value }}" />
+        </div>
+      {{ end }}
+    </div>

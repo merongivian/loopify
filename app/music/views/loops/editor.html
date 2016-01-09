@@ -11,6 +11,11 @@
     <input name="volume" type="text" value="{{ current_loop._volume }}" />
 
     <p>{{ current_loop._title }}</p>
+
+  <div id="patterns-wrapper">
+    {{ current_loop._sequences.each do |sequence| }}
+      <:loops:grid />
+    {{ end }}
   </div>
 
   {{ current_loop._sequences.each do |sequence| }}
