@@ -1,0 +1,87 @@
+@import "utilities/variables";
+
+h4 p#title {
+  text-align: center;
+}
+
+#loop-header {
+  margin: $elements-spacing;
+  height: $elements-spacing + 20px;
+
+  #left-controls {
+    float: left;
+
+    a, input {
+      display: inline-block;
+    }
+
+    input {
+      margin-top: 13px;
+    }
+  }
+
+  #right-controls {
+    float: right;
+  }
+}
+
+#grid {
+  margin-top: $elements-spacing + 35px;
+  margin-bottom: $elements-spacing + 15px;
+  margin-right: $elements-spacing;
+  margin-left: $elements-spacing;
+}
+
+.sequence {
+  border-radius: 25px;
+  border: 2px solid #23527C;
+  padding: $elements-spacing;
+
+  p {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  a.play {
+    position: absolute;
+  }
+
+  .controls {
+    margin: 8px;
+  }
+}
+
+.sequence-wrapper {
+  padding: $elements-spacing / 2;
+}
+
+$volume-width: 140px;
+
+.volume {
+  transform: rotateZ(90deg);
+}
+
+.volume_wrapper {
+  /*make actual width of rotated volume input shorter*/
+  width: $volume-width / 2;
+  height: 0px;
+  float: right;
+}
+
+input.volume {
+  width: $volume-width;
+  /*FIXME: this only works with volume-width = 140px*/
+  margin-top: -25px;
+}
+
+/*----------------scheduler-------------------*/
+
+.cells {
+  display: inline-block;
+}
+
+input.cell[type="checkbox"] {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  margin: 4px;
+}

@@ -18,9 +18,6 @@ module Music
       #@audio_sequence.smoothing = 0.4
       #@audio_sequence.custom_wave_type([-0.8, 1, 0.8, 0.8, -0.8, -0.8, -1])
 
-      set_volume
-      set_effect
-
       @audio_sequence.loop_mode = true
       @audio_sequence.play
     end
@@ -30,6 +27,7 @@ module Music
     end
 
     def set_volume
+      #TODO extract this calc from here and from SequenceDecorator (DRY)
       @audio_sequence.volume = _volume.to_i / 100 / 2
     end
 

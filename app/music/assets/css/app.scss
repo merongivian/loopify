@@ -1,4 +1,4 @@
-$elements-spacing: 30px;
+@import "utilities/variables";
 
 body {
   background: #f9f9f9;
@@ -12,52 +12,4 @@ body {
 .header, .footer {
   margin-left: $elements-spacing;
   margin-right: $elements-spacing;
-}
-
-.sequence {
-  border-radius: 25px;
-  border: 2px solid #23527C;
-  padding: $elements-spacing;
-
-  p {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  a.play {
-    position: absolute;
-  }
-
-  .controls {
-    margin: 8px;
-  }
-}
-
-.sequence-wrapper {
-  padding: $elements-spacing / 2;
-}
-
-$volume-width: 140px;
-
-.volume {
-  transform: rotateZ(90deg);
-}
-
-.volume_wrapper {
-  /*make actual width of rotated volume input shorter*/
-  width: $volume-width / 2;
-  height: 0px;
-  float: right;
-}
-
-input.volume {
-  width: $volume-width;
-  /*FIXME: this only works with volume-width = 140px*/
-  margin-top: -25px;
-}
-
-/*----------------pattern-------------------*/
-
-#patterns-wrapper .pattern .cell {
-  display: inline-block;
 }

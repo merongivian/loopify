@@ -2,22 +2,32 @@ require 'opal-music'
 require 'music/lib/notes_format'
 
 class SequenceDecorator
-  def initialize(sequence_record)
-    @sequence_record = sequence_record
+  attr_reader :db_record
+
+  def initialize(db_record)
+    @db_record = db_record
   end
 
   def complete_notes(with_duration = false)
     notes_format = NotesFormat.new(
-      @sequence_record._notes.map(&:_value),
-      @sequence_record._quantity.to_i
+      @db_record._notes.map(&:_value),
+      @db_record._quantity.to_i
     )
 
     with_duration ? notes_format.add_duration : notes_format.complete
   end
 
+  def cell_values
+    @db_record._cells.map(&:_value)
+  end
+
   def audio(audio_context, tempo)
-    Music::Sequence.new(audio_context,
-                        tempo,
-                        complete_notes(true))
+    audio_sequence = Music::Sequence.new(audio_context,
+                                         tempo,
+                                         complete_notes(true))
+
+    audio_sequence.volume    = @db_record._volume.to_i / 100 / 2
+    audio_sequence.wave_type = @db_record._effect
+    audio_sequence
   end
 end

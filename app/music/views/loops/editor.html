@@ -1,21 +1,41 @@
 <:Title>
   Loop Editor
 <:Body>
-  <div id="loop-header" />
-    <select name="tempo" value="{{ current_loop._tempo }}">
-      {{ (1..170).to_a.each do |number| }}
-        <option value="{{ number }}">{{ number }}</option>
-      {{ end }}
-    </select>
+  <h4>
+    <p id="title">{{ current_loop._title }}</p>
+  </h4>
 
-    <input name="volume" type="text" value="{{ current_loop._volume }}" />
+  <div id="loop-header">
+    <div id="left-controls">
+      <a href="#" e-click="play_grid" title="Play" class="play main-control"></a>
 
-    <p>{{ current_loop._title }}</p>
+      <input class="loop-volume" type="range" name="volume" min="0" max="100" value="{{ current_loop._volume }}" />
+    </div>
 
-  <div id="patterns-wrapper">
-    {{ current_loop._sequences.each do |sequence| }}
-      <:loops:grid />
-    {{ end }}
+    <div id="right-controls">
+      <div>
+        <label for="size">Length : </label>
+        <select name="size" value="{{ current_loop._size }}">
+          {{ (4..32).to_a.each do |number| }}
+            <option value="{{ number }}">{{ number }}</option>
+          {{ end }}
+        </select>
+      </div>
+
+      <div>
+        <label for="tempo">Tempo : </label>
+        <select name="tempo" value="{{ current_loop._tempo }}">
+          {{ (1..320).to_a.each do |number| }}
+            <option value="{{ number }}">{{ number }}</option>
+          {{ end }}
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="grid">
+    <strong><p>Schedule Grid : </p></strong>
+    <:loops:grid />
   </div>
 
   {{ current_loop._sequences.each do |sequence| }}
