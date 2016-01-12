@@ -36,12 +36,12 @@ module Music
     end
 
     def change_notes
-      changed_notes = audio_sequence_decorator.complete_notes
+      changed_notes = sequence_decorator.complete_notes
 
       _notes.reverse.each(&:destroy)
 
       changed_notes.each { |n| _notes.create(value: n) }
-      reload_sequence(@audio_sequence)
+      reload_audio_sequence(@audio_sequence)
     end
 
     def reload_audio_sequence(local_audio_sequence)
