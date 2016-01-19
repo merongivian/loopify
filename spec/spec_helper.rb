@@ -1,5 +1,6 @@
 # Volt sets up rspec and capybara for testing.
 require 'volt/spec/setup'
+require 'support'
 Volt.spec_setup
 
 RSpec.configure do |config|
@@ -11,4 +12,5 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+  config.include Helper
 end

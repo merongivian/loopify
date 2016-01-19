@@ -6,6 +6,10 @@
     <ul class="nav nav-pills pull-right">
       <:nav href="/">Home</:nav>
       <:nav href="/about">About</:nav>
+      {{ if Volt.fetch_current_user }}
+        <!--FIXME: why it doesn't resolve the promise for users?-->
+        <:nav href="{{ url_for component: 'main', controller: 'main', action: 'loops', username: Volt.fetch_current_user._username.value }}">Loops</:nav>
+      {{ end }}
       <:user_templates:menu />
     </ul>
     <h3 class="text-muted">loopify</h3>

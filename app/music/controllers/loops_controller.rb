@@ -3,6 +3,8 @@ require 'music/lib/sequence_decorator'
 
 module Music
   class LoopsController < Volt::ModelController
+    before_action :require_login, only: :editor
+
     def editor
 
     end
@@ -43,7 +45,11 @@ module Music
     end
 
     def current_loop
-      store._loops.where(title: params._title).first
+      current_user._loops.where(title: params._title).first
+    end
+
+    def current_user
+      store.users.where(username: params._username).first
     end
   end
 end
