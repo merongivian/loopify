@@ -1,0 +1,36 @@
+<:Title>
+  Explore
+<:Body>
+  <h1>Users List</h1>
+  <table class="table" id="loop-index">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Loops</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ store.users.each do |user| }}
+        {{ if user._name != Volt.current_user._name.value }}
+          <tr>
+            <td>{{ user._name }}</td>
+            <td>{{ user._loops.all.length }}</td>
+            <td>
+              <p>
+              </p>
+              {{ if current_user_friends_names.include?(user._name) }}
+                <button type="button" e-click="unfollow(user)" class="btn btn-primary btn-sm">
+                  Unfollow
+                </button>
+              {{ else }}
+                <button type="button" e-click="follow(user)" class="btn btn-primary btn-sm">
+                  Follow
+                </button>
+              {{ end }}
+            </td>
+          </tr>
+        {{ end }}
+      {{ end }}
+    </tbody>
+  </table>

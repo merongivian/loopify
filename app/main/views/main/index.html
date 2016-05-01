@@ -1,5 +1,11 @@
 <:Title>
-  Home
+  News Feed
 
 <:Body>
-  <h1>Home</h1>
+  <h1>News Feed</h1>
+
+  {{ current_user_news.each do |n| }}
+    <p>
+      {{ n[:friend] }} {{ n[:news] }} on {{ n[:date] }}
+    </p>
+  {{ end }}

@@ -9,6 +9,7 @@
       {{ if Volt.fetch_current_user }}
         <!--FIXME: why it doesn't resolve the promise for users?-->
         <:nav href="{{ url_for component: 'main', controller: 'main', action: 'loops', username: Volt.fetch_current_user._username.value }}">Loops</:nav>
+        <:nav href="/explore">Explore</:nav>
       {{ end }}
       <:user_templates:menu />
     </ul>
@@ -22,7 +23,7 @@
   </div>
 
   <div class="footer">
-    <p>&copy; Company {{ Time.now.year }}</p>
+    <p>&copy; Merongivian {{ Time.now.year }}</p>
   </div>
 
 <:Nav>

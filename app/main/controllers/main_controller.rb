@@ -1,7 +1,10 @@
 # By default Volt generates this controller for your Main component
+#
+require 'date'
+
 module Main
   class MainController < Volt::ModelController
-    before_action :require_login, only: :loops
+    before_action :require_login, only: [:loops, :explore]
 
     def index
       # Add code for when the index view is loaded
@@ -12,6 +15,10 @@ module Main
     end
 
     def loops
+
+    end
+
+    def explore
 
     end
 
@@ -41,6 +48,7 @@ module Main
             32.times { added_sequence._cells.create(value: false) }
           end
         end
+        Volt.current_user._news.create(value: "created loop #{page._loop_title}", date: Date.today.to_s)
 
         redirect_to "/#{user_name}/loops/#{page._loop_title}"
       end
@@ -49,6 +57,38 @@ module Main
     def set_loop_defaults
       page._loop_sequences_size = 2
       page._loop_size = 5
+    end
+
+    def follow(friend)
+      Volt.current_user._friends.create value: friend
+      Volt.current_user._news.create(value: "followed #{friend._name}", date: Date.today.to_s)
+    end
+
+    def unfollow(friend)
+      friends = current_user_friends.value.dup
+      Volt.current_user._friends.reverse.each(&:destroy)
+
+      friends.delete_if { |f| f._name == friend._name }
+      friends.each do |saved_friend|
+        Volt.current_user._friends.create(value: saved_friend)
+      end
+      Volt.current_user._news.create(value: "unfollowed #{friend._name}", date: Date.today.to_s)
+    end
+
+    def current_user_news
+      current_user_friends.flat_map do |friend|
+        friend._news.all.value.map do |n|
+          { friend: friend._name, news: n._value, date: n._date }
+        end
+      end
+    end
+
+    def current_user_friends_names
+      current_user_friends.map(&:_name)
+    end
+
+    def current_user_friends
+      Volt.current_user._friends.map(&:_value)
     end
 
     # The main template contains a #template binding that shows another
