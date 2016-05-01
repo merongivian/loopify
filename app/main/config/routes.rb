@@ -10,7 +10,7 @@ client '/forgot', component: 'user_templates', controller: 'login', action: 'for
 client '/account', component: 'user_templates', controller: 'account', action: 'index'
 
 client '/{{ username }}/loops/{{ title }}', component: 'music', controller: 'loops', action: 'editor'
-client '/{{ username }}/loops', component: 'main', controller: 'main', action: 'loops'
+client '/loops', component: 'main', controller: 'main', action: 'loops'
 
 # The main route, this should be last. It will match any params not
 # previously matched.

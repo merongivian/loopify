@@ -56,9 +56,9 @@
       </tr>
     </thead>
     <tbody>
-      {{ current_user._loops.each do |current_loop| }}
+      {{ Volt.current_user._loops.each do |current_loop| }}
         <tr>
-          <td><a href="{{ url_for component: 'music', controller: 'loops', action: 'editor', username: params._username, title: current_loop._title  }}">{{ current_loop._title }}</a></td>
+          <td><a href="{{ url_for component: 'music', controller: 'loops', action: 'editor', username: user_name, title: current_loop._title  }}">{{ current_loop._title }}</a></td>
           <td>{{ current_loop._sequences.length }}</td>
           <td>{{ current_loop._size }}</td>
         </tr>

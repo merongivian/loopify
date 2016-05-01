@@ -24,7 +24,7 @@ module Main
         return
       end
 
-      loopy = current_user._loops.create(
+      loopy = Volt.current_user._loops.create(
         title: page._loop_title,
         tempo: 160,
         size: page._loop_size.to_i,
@@ -42,7 +42,7 @@ module Main
           end
         end
 
-        redirect_to "/#{params._username}/loops/#{page._loop_title}"
+        redirect_to "/#{user_name}/loops/#{page._loop_title}"
       end
     end
 
@@ -51,15 +51,15 @@ module Main
       page._loop_size = 5
     end
 
-    def current_user
-      store.users.where(username: params._username).first
-    end
-
     # The main template contains a #template binding that shows another
     # template.  This is the path to that template.  It may change based
     # on the params._component, params._controller, and params._action values.
     def main_path
       "#{params._component || 'main'}/#{params._controller || 'main'}/#{params._action || 'index'}"
+    end
+
+    def user_name
+      Volt.current_user.value.name
     end
 
     # Determine if the current nav component is the active one by looking

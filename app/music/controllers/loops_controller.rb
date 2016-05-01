@@ -45,11 +45,11 @@ module Music
     end
 
     def current_loop
-      current_user._loops.where(title: params._title).first
+      loop_user._loops.where(title: params._title).first
     end
 
-    def current_user
-      store.users.where(username: params._username).first
+    def loop_user
+      store.users.where(name: params._username).first
     end
   end
 end

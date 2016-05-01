@@ -23,6 +23,7 @@ gem 'volt-mailer', '~> 0.1.1'
 #
 # Message Bus encryption is not supported on Windows at the moment.
 #
+gem 'opal-audio', path: '../opal-audio'
 gem 'opal-music', path: '../opal-music'
 
 gem 'opal-browser', path: '../opal-browser'
@@ -35,7 +36,7 @@ end
 group :test do
   # Testing dependencies
   gem 'rspec', '~> 3.2.0'
-  gem 'opal-rspec', '~> 0.4.2'
+  gem 'opal-rspec', '~> 0.5'
   gem 'capybara', '~> 2.4.4'
   gem 'selenium-webdriver', '~> 2.47.1'
   gem 'chromedriver-helper', '~> 1.0.0'
