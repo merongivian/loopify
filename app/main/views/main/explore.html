@@ -14,11 +14,9 @@
       {{ store.users.each do |user| }}
         {{ if user._name != Volt.current_user._name.value }}
           <tr>
-            <td>{{ user._name }}</td>
+            <td><a href="{{ url_for component: 'main', controller: 'main', action: 'explore_loops', username: user._name }}">{{ user._name }}</a></td>
             <td>{{ user._loops.all.length }}</td>
             <td>
-              <p>
-              </p>
               {{ if current_user_friends_names.include?(user._name) }}
                 <button type="button" e-click="unfollow(user)" class="btn btn-primary btn-sm">
                   Unfollow

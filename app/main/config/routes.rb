@@ -13,6 +13,7 @@ client '/{{ username }}/loops/{{ title }}', component: 'music', controller: 'loo
 
 client '/loops', component: 'main', controller: 'main', action: 'loops'
 client '/explore', component: 'main', controller: 'main', action: 'explore'
+client '/explore/{{ username }}/loops', component: 'main', controller: 'main', action: 'explore_loops'
 
 # The main route, this should be last. It will match any params not
 # previously matched.

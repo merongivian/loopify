@@ -4,7 +4,7 @@ require 'date'
 
 module Main
   class MainController < Volt::ModelController
-    before_action :require_login, only: [:loops, :explore]
+    before_action :require_login, only: [:loops, :explore, :explore_loops, :index]
 
     def index
       # Add code for when the index view is loaded
@@ -19,6 +19,10 @@ module Main
     end
 
     def explore
+
+    end
+
+    def explore_loops
 
     end
 
@@ -75,6 +79,25 @@ module Main
       Volt.current_user._news.create(value: "unfollowed #{friend._name}", date: Date.today.to_s)
     end
 
+    def fork_loop(copied_loop)
+      #NOTE: SORRY JEBUS
+      Volt.current_user._loops.create(title: copied_loop._title.dup, tempo: copied_loop._tempo.dup, volume: copied_loop._volume.dup).then do |created_loop|
+        copied_loop._sequences.each do |copied_sequence|
+          created_loop._sequences.create(title: copied_sequence._title.dup, volume: copied_sequence._volume.dup, effect: copied_sequence._effect.dup, quantity: copied_sequence._quantity.dup).then do |created_sequence|
+            copied_sequence._notes.each do |copied_note|
+              created_sequence._notes.create(value: copied_note._value.dup)
+            end
+
+            copied_sequence._cells.each do |copied_cell|
+              created_sequence._cells.create(value: copied_cell._value.dup)
+            end
+          end
+        end
+      end
+
+      Volt.current_user._news.create(value: "copied #{copied_loop._title}", date: Date.today.to_s)
+    end
+
     def current_user_news
       current_user_friends.flat_map do |friend|
         friend._news.all.value.map do |n|
@@ -88,7 +111,7 @@ module Main
     end
 
     def current_user_friends
-      Volt.current_user._friends.map(&:_value)
+      Volt.current_user._friends.all.map(&:_value)
     end
 
     # The main template contains a #template binding that shows another

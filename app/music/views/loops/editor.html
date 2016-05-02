@@ -36,7 +36,7 @@
     <:loops:grid />
   </div>
 
-  {{ current_loop._sequences.each do |sequence| }}
+  {{ current_loop_sorted_sequences.each do |sequence| }}
     <!--FIXME: try not to use the value method to resolve the promise-->
     <:sequences:controls model="{{ sequence }}" audio_context="{{ audio_context }}" tempo="{{ current_loop._tempo.value }}" />
   {{ end }}

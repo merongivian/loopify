@@ -51,5 +51,9 @@ module Music
     def loop_user
       store.users.where(name: params._username).first
     end
+
+    def current_loop_sorted_sequences
+      current_loop._sequences.sort_by{ |sequence| sequence._title }
+    end
   end
 end

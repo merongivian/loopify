@@ -1,6 +1,6 @@
 <:Body>
-  {{ current_loop._sequences.each_with_index do |sequence, index| }}
-    <label>{{ current_loop._sequences.at(index)._title }} : </label>
+  {{ current_loop_sorted_sequences.each_with_index do |sequence, index| }}
+    <label>{{ current_loop_sorted_sequences.at(index)._title }} : </label>
     <:cells current_values="{{ current_cells(sequence) }}" />
   {{ end }}
 
