@@ -53,6 +53,7 @@
         <th>Name</th>
         <th>Sequences</th>
         <th>Size</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -61,7 +62,34 @@
           <td><a href="{{ url_for component: 'music', controller: 'loops', action: 'editor', username: user_name, title: current_loop._title  }}">{{ current_loop._title }}</a></td>
           <td>{{ current_loop._sequences.length }}</td>
           <td>{{ current_loop._size }}</td>
+          <td>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+              Delete
+            </button>
+          </td>
         </tr>
+        <:deleting delete_loop="{{ current_loop }}" />
       {{ end }}
     </tbody>
   </table>
+
+<:Deleting>
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" id="loop-modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Delete Loop</h4>
+        </div>
+
+        <div class="modal-body">
+          <p>Are you sure want to delete your loop ?</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button e-click="attrs.delete_loop.destroy" type="button" class="btn btn-danger" data-dismiss="modal">Yes, Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
