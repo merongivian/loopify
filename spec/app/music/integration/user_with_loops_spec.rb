@@ -14,6 +14,24 @@ describe 'User loops', type: :feature do
     visit '/juan/loops'
   end
 
+  it 'can create a loop' do
+    click_button 'New Loop'
+
+    within('.modal-dialog') do
+      fill_in('Title', with: 'Great')
+      select('4', from: 'Sequences')
+      select('20', from: 'Size')
+
+      click_button('Create Loop')
+    end
+
+    expect(page).to have_content 'Great'
+
+    within('#loop-header') do
+      expect(page.all('#sequence-wrapper').length).to eq 4
+    end
+  end
+
   it 'shows a list with created loops from a user' do
     awesome_loop = juan._loops.create(title: 'awesome', size: 14).value
       .tap do |current_loop|
@@ -44,25 +62,4 @@ describe 'User loops', type: :feature do
     end
   end
 
-  it 'can create a loop' do
-    click_button 'New Loop'
-
-    within('.modal-dialog') do
-      fill_in('Title', with: 'Great')
-      select('4', from: 'Sequences')
-      select('20', from: 'Size')
-
-      click_button('Create Loop')
-    end
-
-    expect(page).to have_content 'Great'
-
-    within('#loop-header') do
-      expect(page.all('#sequence-wrapper').length).to eq 4
-    end
-
-    #within('#right-controls') do
-      #expect(find_field('size').value).to eq '20'
-    #end
-  end
 end

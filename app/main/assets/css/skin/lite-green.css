@@ -1,0 +1,234 @@
+a:hover {
+	color: #8BC34A;
+}
+
+.navbar-lg .navbar-nav > li > a:hover {
+	color:#8BC34A;
+}
+
+.navbar-login a:hover {
+	border:2px solid #8BC34A !important;
+	color:#8BC34A;
+}
+
+.navbar-login a {
+	background: #8BC34A;
+	border:2px solid #8BC34A;
+}
+
+.dropdown-menu > li > a:hover {
+	color: #8BC34A;
+}
+
+.intro6 p.lead {
+	color: #8BC34A;
+}
+
+.intro16 li i {
+	color: #8BC34A;
+}
+
+.intro18 .intro-form2-dark {
+	background: #8BC34A;
+}
+
+.app-btn a {
+	background: #8BC34A;
+}
+
+.btn.btn-primary {
+	background: #8BC34A;
+	border: 1px solid #8BC34A;
+}
+
+.service-box i {
+	color: #8BC34A;
+}
+
+.service2 {
+	background: #8BC34A;
+}
+
+.s2-box:hover .s2-box-ico div {
+	color: #8BC34A;
+}
+
+.icon-box-square .text-center span {
+	color: #8BC34A;
+}
+
+.list li i {
+	color: #8BC34A;
+}
+
+.ai-list ul li i {
+	color: #8BC34A;
+}
+
+.info-content2 {
+	background: #8BC34A !important;
+}
+
+.video-box:hover span {
+	color: #8BC34A;
+}
+
+.video-box:hover a span {
+	color: #8BC34A;
+}
+
+.fc-info a {
+	color: #8BC34A;
+}
+
+.pricing__title {
+	color: #8BC34A;
+}
+
+.pricing__item .btn {
+	background: #8BC34A;
+	border-color: #8BC34A;
+}
+
+.rmore {
+	color: #8BC34A;
+}
+
+.pagination > li.active a:hover ,
+.pagination > li a:hover ,
+.pagination > li a:focus ,
+.pagination > li.active a {
+	background: #8BC34A;
+	border: 1px solid #8BC34A;
+}
+
+.widget_categories ul li a:hover {
+	color: #8BC34A;
+}
+
+.portfolio-filter li a.active {
+	color: #8BC34A;
+	border: 2px solid #8BC34A;
+}
+
+.c-info i {
+	color: #8BC34A;
+}
+
+#contact-form {
+	background: #8BC34A;
+}
+
+.progress-bar-success {
+	background-color: #8BC34A;
+}
+
+.bg-primary {
+	background: #8BC34A;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+	color: #8BC34A !important;
+}
+
+.nav-tabs > li > a:after {
+	background: #8BC34A;
+}
+
+.tab-nav > li > a:after {
+	background: #8BC34A;
+}
+
+.lead a {
+	color: #8BC34A;
+}
+
+blockquote {
+	border-left: 5px solid #8BC34A;
+}
+
+.contact-info i {
+	color: #8BC34A;
+}
+
+blockquote.inverse {
+	border-right: 5px solid #8BC34A;
+}
+
+.btn-circle:hover,
+.btn-info {
+	background: #8BC34A !important;
+	border-color: #8BC34A !important;
+}
+
+.process-step2 .btn-circle:hover,
+.process-step2 .btn-info {
+	background: #8BC34A !important;
+	border-color: #8BC34A !important;
+}
+
+.stats1-info i {
+	color: #8BC34A;
+}
+
+.dropcap-color .dropcap-square {
+	border: 2px solid #8BC34A;
+	color: #8BC34A;
+}
+
+.dropcap-color .dropcap-radius {
+	border: 2px solid #8BC34A;
+	background: #8BC34A;
+}
+
+.dropcap-color .dropcap-round {
+	border: 2px solid #8BC34A;
+	background: #8BC34A;
+}
+
+.cta-btn:hover {
+	background: #8BC34A;
+	border: 2px solid #8BC34A;
+}
+
+.cta-wrap.bg-dark .cta-btn:hover {
+	background: #8BC34A;
+	border: 2px solid #8BC34A;
+}
+
+.pricing2 .price {
+	background-color: #8BC34A;
+}
+
+.pricing2 .btn {
+	background: #8BC34A;
+	border-color: #8BC34A;
+}
+
+@media only screen and (min-width: 280px)  and (max-width: 767px)  {
+
+.navbar-nav > li > a:hover,
+.dropdown-menu > li > a:hover {
+	color: #8BC34A !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

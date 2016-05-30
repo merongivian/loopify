@@ -1,0 +1,234 @@
+a:hover {
+	color: #FFC107;
+}
+
+.navbar-lg .navbar-nav > li > a:hover {
+	color:#FFC107;
+}
+
+.navbar-login a:hover {
+	border:2px solid #FFC107 !important;
+	color:#FFC107;
+}
+
+.navbar-login a {
+	background: #FFC107;
+	border:2px solid #FFC107;
+}
+
+.dropdown-menu > li > a:hover {
+	color: #FFC107;
+}
+
+.intro6 p.lead {
+	color: #FFC107;
+}
+
+.intro16 li i {
+	color: #FFC107;
+}
+
+.intro18 .intro-form2-dark {
+	background: #FFC107;
+}
+
+.app-btn a {
+	background: #FFC107;
+}
+
+.btn.btn-primary {
+	background: #FFC107;
+	border: 1px solid #FFC107;
+}
+
+.service-box i {
+	color: #FFC107;
+}
+
+.service2 {
+	background: #FFC107;
+}
+
+.s2-box:hover .s2-box-ico div {
+	color: #FFC107;
+}
+
+.icon-box-square .text-center span {
+	color: #FFC107;
+}
+
+.list li i {
+	color: #FFC107;
+}
+
+.ai-list ul li i {
+	color: #FFC107;
+}
+
+.info-content2 {
+	background: #FFC107 !important;
+}
+
+.video-box:hover span {
+	color: #FFC107;
+}
+
+.video-box:hover a span {
+	color: #FFC107;
+}
+
+.fc-info a {
+	color: #FFC107;
+}
+
+.pricing__title {
+	color: #FFC107;
+}
+
+.pricing__item .btn {
+	background: #FFC107;
+	border-color: #FFC107;
+}
+
+.rmore {
+	color: #FFC107;
+}
+
+.pagination > li.active a:hover ,
+.pagination > li a:hover ,
+.pagination > li a:focus ,
+.pagination > li.active a {
+	background: #FFC107;
+	border: 1px solid #FFC107;
+}
+
+.widget_categories ul li a:hover {
+	color: #FFC107;
+}
+
+.portfolio-filter li a.active {
+	color: #FFC107;
+	border: 2px solid #FFC107;
+}
+
+.c-info i {
+	color: #FFC107;
+}
+
+#contact-form {
+	background: #FFC107;
+}
+
+.progress-bar-success {
+	background-color: #FFC107;
+}
+
+.bg-primary {
+	background: #FFC107;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+	color: #FFC107 !important;
+}
+
+.nav-tabs > li > a:after {
+	background: #FFC107;
+}
+
+.tab-nav > li > a:after {
+	background: #FFC107;
+}
+
+.lead a {
+	color: #FFC107;
+}
+
+blockquote {
+	border-left: 5px solid #FFC107;
+}
+
+.contact-info i {
+	color: #FFC107;
+}
+
+blockquote.inverse {
+	border-right: 5px solid #FFC107;
+}
+
+.btn-circle:hover,
+.btn-info {
+	background: #FFC107 !important;
+	border-color: #FFC107 !important;
+}
+
+.process-step2 .btn-circle:hover,
+.process-step2 .btn-info {
+	background: #FFC107 !important;
+	border-color: #FFC107 !important;
+}
+
+.stats1-info i {
+	color: #FFC107;
+}
+
+.dropcap-color .dropcap-square {
+	border: 2px solid #FFC107;
+	color: #FFC107;
+}
+
+.dropcap-color .dropcap-radius {
+	border: 2px solid #FFC107;
+	background: #FFC107;
+}
+
+.dropcap-color .dropcap-round {
+	border: 2px solid #FFC107;
+	background: #FFC107;
+}
+
+.cta-btn:hover {
+	background: #FFC107;
+	border: 2px solid #FFC107;
+}
+
+.cta-wrap.bg-dark .cta-btn:hover {
+	background: #FFC107;
+	border: 2px solid #FFC107;
+}
+
+.pricing2 .price {
+	background-color: #FFC107;
+}
+
+.pricing2 .btn {
+	background: #FFC107;
+	border-color: #FFC107;
+}
+
+@media only screen and (min-width: 280px)  and (max-width: 767px)  {
+
+.navbar-nav > li > a:hover,
+.dropdown-menu > li > a:hover {
+	color: #FFC107 !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

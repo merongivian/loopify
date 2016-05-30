@@ -4,7 +4,7 @@ require 'date'
 
 module Main
   class MainController < Volt::ModelController
-    before_action :require_login, only: [:loops, :explore, :explore_loops, :index]
+    before_action :require_login, only: [:loops, :explore, :explore_loops]
 
     def index
       # Add code for when the index view is loaded
@@ -54,7 +54,9 @@ module Main
         end
         Volt.current_user._news.create(value: "created loop #{page._loop_title}", date: Date.today.to_s)
 
-        redirect_to "/#{user_name}/loops/#{page._loop_title}"
+        flash._successes << 'Your loop has been succesfully created'
+        `document.getElementById("loop-modal-close").click()`
+        #redirect_to "/#{user_name}/loops/#{page._loop_title}"
       end
     end
 
@@ -128,7 +130,11 @@ module Main
     # Determine if the current nav component is the active one by looking
     # at the first part of the url against the href attribute.
     def active_tab?
-      url.path.split('/')[1] == attrs.href.split('/')[1]
+      current_path == attrs.href.split('/')[1]
+    end
+
+    def current_path
+      url.path.split('/')[1]
     end
   end
 end

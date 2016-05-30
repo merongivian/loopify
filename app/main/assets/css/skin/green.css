@@ -1,0 +1,234 @@
+a:hover {
+	color: #4CAF50;
+}
+
+.navbar-lg .navbar-nav > li > a:hover {
+	color:#4CAF50;
+}
+
+.navbar-login a:hover {
+	border:2px solid #4CAF50 !important;
+	color:#4CAF50;
+}
+
+.navbar-login a {
+	background: #4CAF50;
+	border:2px solid #4CAF50;
+}
+
+.dropdown-menu > li > a:hover {
+	color: #4CAF50;
+}
+
+.intro6 p.lead {
+	color: #4CAF50;
+}
+
+.intro16 li i {
+	color: #4CAF50;
+}
+
+.intro18 .intro-form2-dark {
+	background: #4CAF50;
+}
+
+.app-btn a {
+	background: #4CAF50;
+}
+
+.btn.btn-primary {
+	background: #4CAF50;
+	border: 1px solid #4CAF50;
+}
+
+.service-box i {
+	color: #4CAF50;
+}
+
+.service2 {
+	background: #4CAF50;
+}
+
+.s2-box:hover .s2-box-ico div {
+	color: #4CAF50;
+}
+
+.icon-box-square .text-center span {
+	color: #4CAF50;
+}
+
+.list li i {
+	color: #4CAF50;
+}
+
+.ai-list ul li i {
+	color: #4CAF50;
+}
+
+.info-content2 {
+	background: #4CAF50 !important;
+}
+
+.video-box:hover span {
+	color: #4CAF50;
+}
+
+.video-box:hover a span {
+	color: #4CAF50;
+}
+
+.fc-info a {
+	color: #4CAF50;
+}
+
+.pricing__title {
+	color: #4CAF50;
+}
+
+.pricing__item .btn {
+	background: #4CAF50;
+	border-color: #4CAF50;
+}
+
+.rmore {
+	color: #4CAF50;
+}
+
+.pagination > li.active a:hover ,
+.pagination > li a:hover ,
+.pagination > li a:focus ,
+.pagination > li.active a {
+	background: #4CAF50;
+	border: 1px solid #4CAF50;
+}
+
+.widget_categories ul li a:hover {
+	color: #4CAF50;
+}
+
+.portfolio-filter li a.active {
+	color: #4CAF50;
+	border: 2px solid #4CAF50;
+}
+
+.c-info i {
+	color: #4CAF50;
+}
+
+#contact-form {
+	background: #4CAF50;
+}
+
+.progress-bar-success {
+	background-color: #4CAF50;
+}
+
+.bg-primary {
+	background: #4CAF50;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+	color: #4CAF50 !important;
+}
+
+.nav-tabs > li > a:after {
+	background: #4CAF50;
+}
+
+.tab-nav > li > a:after {
+	background: #4CAF50;
+}
+
+.lead a {
+	color: #4CAF50;
+}
+
+blockquote {
+	border-left: 5px solid #4CAF50;
+}
+
+.contact-info i {
+	color: #4CAF50;
+}
+
+blockquote.inverse {
+	border-right: 5px solid #4CAF50;
+}
+
+.btn-circle:hover,
+.btn-info {
+	background: #4CAF50 !important;
+	border-color: #4CAF50 !important;
+}
+
+.process-step2 .btn-circle:hover,
+.process-step2 .btn-info {
+	background: #4CAF50 !important;
+	border-color: #4CAF50 !important;
+}
+
+.stats1-info i {
+	color: #4CAF50;
+}
+
+.dropcap-color .dropcap-square {
+	border: 2px solid #4CAF50;
+	color: #4CAF50;
+}
+
+.dropcap-color .dropcap-radius {
+	border: 2px solid #4CAF50;
+	background: #4CAF50;
+}
+
+.dropcap-color .dropcap-round {
+	border: 2px solid #4CAF50;
+	background: #4CAF50;
+}
+
+.cta-btn:hover {
+	background: #4CAF50;
+	border: 2px solid #4CAF50;
+}
+
+.cta-wrap.bg-dark .cta-btn:hover {
+	background: #4CAF50;
+	border: 2px solid #4CAF50;
+}
+
+.pricing2 .price {
+	background-color: #4CAF50;
+}
+
+.pricing2 .btn {
+	background: #4CAF50;
+	border-color: #4CAF50;
+}
+
+@media only screen and (min-width: 280px)  and (max-width: 767px)  {
+
+.navbar-nav > li > a:hover,
+.dropdown-menu > li > a:hover {
+	color: #4CAF50 !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

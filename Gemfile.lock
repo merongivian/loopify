@@ -1,5 +1,6 @@
-PATH
-  remote: ../../ruby/cool_repos/volt
+GIT
+  remote: https://github.com/voltrb/volt
+  revision: f942b92385adbc894ee4a37903ee6a9c1a65e9a4
   specs:
     volt (0.9.7.pre1)
       bcrypt (~> 3.1.9)
@@ -42,7 +43,7 @@ GEM
   specs:
     archive-zip (0.7.0)
       io-like (~> 0.3.0)
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     bson (3.2.6)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -56,7 +57,7 @@ GEM
       archive-zip (~> 0.7.0)
       nokogiri (~> 1.6)
     cliver (0.3.2)
-    coderay (1.1.0)
+    coderay (1.1.1)
     concurrent-ruby (0.8.0)
       ref (~> 1.0, >= 1.0.5)
     concurrent-ruby-ext (0.8.0)
@@ -69,7 +70,7 @@ GEM
     eventmachine (1.0.8)
     execjs (2.6.0)
     exifr (1.2.3.1)
-    faye-websocket (0.10.2)
+    faye-websocket (0.10.4)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.9.10)
@@ -88,9 +89,9 @@ GEM
     in_threads (1.3.1)
     io-like (0.3.0)
     json (1.8.3)
-    listen (3.0.5)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
+    listen (3.0.8)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -117,15 +118,15 @@ GEM
     pony (1.11)
       mail (>= 2.0)
     progress (3.1.0)
-    pry (0.10.3)
+    pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rb-fsevent (0.9.6)
-    rb-inotify (0.9.5)
+    rb-fsevent (0.9.7)
+    rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     rbnacl (3.2.0)
       ffi
@@ -146,7 +147,7 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     rubyzip (1.1.7)
-    sass (3.4.20)
+    sass (3.4.22)
     selenium-webdriver (2.47.1)
       childprocess (~> 0.5)
       multi_json (~> 1.0)
@@ -211,3 +212,6 @@ DEPENDENCIES
   volt-mailer (~> 0.1.1)
   volt-mongo (~> 0.2.0)
   volt-user_templates (~> 0.4.0)
+
+BUNDLED WITH
+   1.12.5

@@ -1,0 +1,234 @@
+a:hover {
+	color: #E91E63;
+}
+
+.navbar-lg .navbar-nav > li > a:hover {
+	color:#E91E63;
+}
+
+.navbar-login a:hover {
+	border:2px solid #E91E63 !important;
+	color:#E91E63;
+}
+
+.navbar-login a {
+	background: #E91E63;
+	border:2px solid #E91E63;
+}
+
+.dropdown-menu > li > a:hover {
+	color: #E91E63;
+}
+
+.intro6 p.lead {
+	color: #E91E63;
+}
+
+.intro16 li i {
+	color: #E91E63;
+}
+
+.intro18 .intro-form2-dark {
+	background: #E91E63;
+}
+
+.app-btn a {
+	background: #E91E63;
+}
+
+.btn.btn-primary {
+	background: #E91E63;
+	border: 1px solid #E91E63;
+}
+
+.service-box i {
+	color: #E91E63;
+}
+
+.service2 {
+	background: #E91E63;
+}
+
+.s2-box:hover .s2-box-ico div {
+	color: #E91E63;
+}
+
+.icon-box-square .text-center span {
+	color: #E91E63;
+}
+
+.list li i {
+	color: #E91E63;
+}
+
+.ai-list ul li i {
+	color: #E91E63;
+}
+
+.info-content2 {
+	background: #E91E63 !important;
+}
+
+.video-box:hover span {
+	color: #E91E63;
+}
+
+.video-box:hover a span {
+	color: #E91E63;
+}
+
+.fc-info a {
+	color: #E91E63;
+}
+
+.pricing__title {
+	color: #E91E63;
+}
+
+.pricing__item .btn {
+	background: #E91E63;
+	border-color: #E91E63;
+}
+
+.rmore {
+	color: #E91E63;
+}
+
+.pagination > li.active a:hover ,
+.pagination > li a:hover ,
+.pagination > li a:focus ,
+.pagination > li.active a {
+	background: #E91E63;
+	border: 1px solid #E91E63;
+}
+
+.widget_categories ul li a:hover {
+	color: #E91E63;
+}
+
+.portfolio-filter li a.active {
+	color: #E91E63;
+	border: 2px solid #E91E63;
+}
+
+.c-info i {
+	color: #E91E63;
+}
+
+#contact-form {
+	background: #E91E63;
+}
+
+.progress-bar-success {
+	background-color: #E91E63;
+}
+
+.bg-primary {
+	background: #E91E63;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+	color: #E91E63 !important;
+}
+
+.nav-tabs > li > a:after {
+	background: #E91E63;
+}
+
+.tab-nav > li > a:after {
+	background: #E91E63;
+}
+
+.lead a {
+	color: #E91E63;
+}
+
+blockquote {
+	border-left: 5px solid #E91E63;
+}
+
+.contact-info i {
+	color: #E91E63;
+}
+
+blockquote.inverse {
+	border-right: 5px solid #E91E63;
+}
+
+.btn-circle:hover,
+.btn-info {
+	background: #E91E63 !important;
+	border-color: #E91E63 !important;
+}
+
+.process-step2 .btn-circle:hover,
+.process-step2 .btn-info {
+	background: #E91E63 !important;
+	border-color: #E91E63 !important;
+}
+
+.stats1-info i {
+	color: #E91E63;
+}
+
+.dropcap-color .dropcap-square {
+	border: 2px solid #E91E63;
+	color: #E91E63;
+}
+
+.dropcap-color .dropcap-radius {
+	border: 2px solid #E91E63;
+	background: #E91E63;
+}
+
+.dropcap-color .dropcap-round {
+	border: 2px solid #E91E63;
+	background: #E91E63;
+}
+
+.cta-btn:hover {
+	background: #E91E63;
+	border: 2px solid #E91E63;
+}
+
+.cta-wrap.bg-dark .cta-btn:hover {
+	background: #E91E63;
+	border: 2px solid #E91E63;
+}
+
+.pricing2 .price {
+	background-color: #E91E63;
+}
+
+.pricing2 .btn {
+	background: #E91E63;
+	border-color: #E91E63;
+}
+
+@media only screen and (min-width: 280px)  and (max-width: 767px)  {
+
+.navbar-nav > li > a:hover,
+.dropdown-menu > li > a:hover {
+	color: #E91E63 !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

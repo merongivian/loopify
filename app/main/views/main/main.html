@@ -1,32 +1,95 @@
-<:Title>
-  {{ view main_path, "title", {controller_group: 'main'} }}
-
 <:Body>
-  <div class="header">
-    <ul class="nav nav-pills pull-right">
-      <:nav href="/">Home</:nav>
-      {{ if Volt.fetch_current_user }}
-        <!--FIXME: why it doesn't resolve the promise for users?-->
-        <:nav href="{{ url_for component: 'main', controller: 'main', action: 'loops', username: Volt.fetch_current_user._username.value }}">Loops</:nav>
-        <:nav href="/explore">Explore</:nav>
-      {{ end }}
-      <:user_templates:menu />
-    </ul>
-    <h3 class="text-muted">loopify</h3>
-  </div>
+	<!-- HEADER -->
+	<header>
+		<nav class="navbar-inverse navbar-lg navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand brand">Loopify</a>
+				</div>
 
-  <div class="container">
-    <:volt:notices />
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
 
-    {{ view main_path, 'body', {controller_group: 'main'} }}
-  </div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right navbar-login">
+            <li>
+              {{ if Volt.fetch_current_user }}
+                <a e-click="Volt.logout">Logout</a>
+              {{ else }}
+                <a href="/login">Login</a>
+              {{ end }}
+            </li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+            <:nav href="/">Home</:nav>
+            {{ if Volt.fetch_current_user }}
+              <!--FIXME: why it doesn't resolve the promise for users?-->
+              <:nav href="{{ url_for component: 'main', controller: 'main', action: 'loops', username: Volt.fetch_current_user._username.value }}">Loops</:nav>
+              <:nav href="/explore">Explore</:nav>
+              <:nav href="/account">Account</:nav>
+            {{ end }}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+  {{ if current_path == 'login' }}
+    <:banner title="Login" description="" />
+    <br/>
+  {{ elsif current_path == 'account' }}
+    <:banner title="User Account" description="" />
+    <br/>
+  {{ elsif current_path == 'signup' }}
+    <:banner title="User Sign Up" description="" />
+    <br/>
+  {{ end }}
 
-  <div class="footer">
-    <p>&copy; Merongivian {{ Time.now.year }}</p>
-  </div>
+  <:volt:notices />
+
+  {{ view main_path, 'body', {controller_group: 'main'} }}
+	<!-- ELEMENTS - TABLES -->
+	<div class="clearfix"></div>
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="container">
+			<ul class="list-inline">
+				<li>
+					<div class="footer-logo">LOOPIFY</div>
+				</li>
+				<li>
+					<div class="contact-info"><i class="fa fa-map-marker"></i><br>N4-93 Caran Street<br>Quito, Ecuador</div>
+				</li>
+				<li>
+					<div class="contact-info"><i class="fa fa-phone"></i><br>593 022 572387<br>593 099 5147321</div>
+				</li>
+				<li>
+					<div class="contact-info no-border"><i class="fa fa-envelope"></i><br>info@loopify.com<br>Support@loopify.com</div>
+				</li>
+				<li class="pull-right">
+					<div class="footer-social">
+						<a href="#" class="fa fa-linkedin"></a>
+						<a href="#" class="fa fa-facebook"></a>
+						<a href="#" class="fa fa-twitter"></a>
+						<a href="#" class="fa fa-dribbble"></a>
+						<a href="#" class="fa fa-google-plus"></a>
+						<a href="#" class="fa fa-instagram"></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- COPYRIGHT -->
+	<div class="footer-copy">
+		<div class="container">
+      &copy; Merongivian {{ Time.now.year }}
+		</div>
+	</div>
 
 <:Nav>
-  <li class="{{ if active_tab? }}active{{ end }}">
-    <a href="{{ attrs.href }}">{{ yield }}</a>
-  </li>
-
+  <li><a class="page-scroll" href="{{ attrs.href }}">{{ yield }}</a></li>

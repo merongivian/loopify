@@ -1,0 +1,234 @@
+a:hover {
+	color: #336a86;
+}
+
+.navbar-lg .navbar-nav > li > a:hover {
+	color:#336a86;
+}
+
+.navbar-login a:hover {
+	border:2px solid #336a86 !important;
+	color:#336a86;
+}
+
+.navbar-login a {
+	background: #336a86;
+	border:2px solid #336a86;
+}
+
+.dropdown-menu > li > a:hover {
+	color: #336a86;
+}
+
+.intro6 p.lead {
+	color: #336a86;
+}
+
+.intro16 li i {
+	color: #336a86;
+}
+
+.intro18 .intro-form2-dark {
+	background: #336a86;
+}
+
+.app-btn a {
+	background: #336a86;
+}
+
+.btn.btn-primary {
+	background: #336a86;
+	border: 1px solid #336a86;
+}
+
+.service-box i {
+	color: #336a86;
+}
+
+.service2 {
+	background: #336a86;
+}
+
+.s2-box:hover .s2-box-ico div {
+	color: #336a86;
+}
+
+.icon-box-square .text-center span {
+	color: #336a86;
+}
+
+.list li i {
+	color: #336a86;
+}
+
+.ai-list ul li i {
+	color: #336a86;
+}
+
+.info-content2 {
+	background: #336a86 !important;
+}
+
+.video-box:hover span {
+	color: #336a86;
+}
+
+.video-box:hover a span {
+	color: #336a86;
+}
+
+.fc-info a {
+	color: #336a86;
+}
+
+.pricing__title {
+	color: #336a86;
+}
+
+.pricing__item .btn {
+	background: #336a86;
+	border-color: #336a86;
+}
+
+.rmore {
+	color: #336a86;
+}
+
+.pagination > li.active a:hover ,
+.pagination > li a:hover ,
+.pagination > li a:focus ,
+.pagination > li.active a {
+	background: #336a86;
+	border: 1px solid #336a86;
+}
+
+.widget_categories ul li a:hover {
+	color: #336a86;
+}
+
+.portfolio-filter li a.active {
+	color: #336a86;
+	border: 2px solid #336a86;
+}
+
+.c-info i {
+	color: #336a86;
+}
+
+#contact-form {
+	background: #336a86;
+}
+
+.progress-bar-success {
+	background-color: #336a86;
+}
+
+.bg-primary {
+	background: #336a86;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+	color: #336a86 !important;
+}
+
+.nav-tabs > li > a:after {
+	background: #336a86;
+}
+
+.tab-nav > li > a:after {
+	background: #336a86;
+}
+
+.lead a {
+	color: #336a86;
+}
+
+blockquote {
+	border-left: 5px solid #336a86;
+}
+
+.contact-info i {
+	color: #336a86;
+}
+
+blockquote.inverse {
+	border-right: 5px solid #336a86;
+}
+
+.btn-circle:hover,
+.btn-info {
+	background: #336a86 !important;
+	border-color: #336a86 !important;
+}
+
+.process-step2 .btn-circle:hover,
+.process-step2 .btn-info {
+	background: #336a86 !important;
+	border-color: #336a86 !important;
+}
+
+.stats1-info i {
+	color: #336a86;
+}
+
+.dropcap-color .dropcap-square {
+	border: 2px solid #336a86;
+	color: #336a86;
+}
+
+.dropcap-color .dropcap-radius {
+	border: 2px solid #336a86;
+	background: #336a86;
+}
+
+.dropcap-color .dropcap-round {
+	border: 2px solid #336a86;
+	background: #336a86;
+}
+
+.cta-btn:hover {
+	background: #336a86;
+	border: 2px solid #336a86;
+}
+
+.cta-wrap.bg-dark .cta-btn:hover {
+	background: #336a86;
+	border: 2px solid #336a86;
+}
+
+.pricing2 .price {
+	background-color: #336a86;
+}
+
+.pricing2 .btn {
+	background: #336a86;
+	border-color: #336a86;
+}
+
+@media only screen and (min-width: 280px)  and (max-width: 767px)  {
+
+.navbar-nav > li > a:hover,
+.dropdown-menu > li > a:hover {
+	color: #336a86 !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

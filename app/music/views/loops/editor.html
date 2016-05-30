@@ -1,42 +1,69 @@
 <:Title>
   Loop Editor
 <:Body>
-  <h4>
-    <p id="title">{{ current_loop._title }}</p>
-  </h4>
+  <:banner title="Loop Editor" description="Create your own Loop" />
 
-  <div id="loop-header">
-    <div id="left-controls">
-      <a href="#" e-click="play_grid" title="Play" class="play main-control"></a>
-    </div>
+  <div class="elements-content">
+    <div class="container">
 
-    <div id="right-controls">
-      <div>
-        <label for="size">Length : </label>
-        <select name="size" value="{{ current_loop._size }}">
-          {{ (4..32).to_a.each do |number| }}
-            <option value="{{ number }}">{{ number }}</option>
-          {{ end }}
-        </select>
+
+
+
+      <h4>
+        <p id="title">{{ current_loop._title }}</p>
+      </h4>
+
+      <div id="loop-header">
+        <div id="left-controls">
+          <a href="#" e-click="play_grid" title="Play" class="play main-control"></a>
+        </div>
+
+        <div id="right-controls">
+          <div>
+            <label for="size">Length : </label>
+            <select name="size" value="{{ current_loop._size }}">
+              {{ (4..32).to_a.each do |number| }}
+                <option value="{{ number }}">{{ number }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <div>
+            <label for="tempo">Tempo : </label>
+            <select name="tempo" value="{{ current_loop._tempo }}">
+              {{ (1..320).to_a.each do |number| }}
+                <option value="{{ number }}">{{ number }}</option>
+              {{ end }}
+            </select>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <label for="tempo">Tempo : </label>
-        <select name="tempo" value="{{ current_loop._tempo }}">
-          {{ (1..320).to_a.each do |number| }}
-            <option value="{{ number }}">{{ number }}</option>
-          {{ end }}
-        </select>
+      <div id="grid">
+        <strong><p>Schedule Grid : </p></strong>
+        <:loops:grid />
       </div>
+
+      {{ current_loop_sorted_sequences.each_with_index do |sequence, index| }}
+        <!--FIXME: try not to use the value method to resolve the promise-->
+        <:sequences:controls model="{{ sequence }}" audio_context="{{ audio_context }}" tempo="{{ current_loop._tempo.value }}" seq_number="{{ index }}" />
+      {{ end }}
+
+
+
+
     </div>
   </div>
 
-  <div id="grid">
-    <strong><p>Schedule Grid : </p></strong>
-    <:loops:grid />
+<:Banner>
+  <div class="intro page_head text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>{{ attrs.title }}</h3>
+          <p>{{ attrs.description }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-
-  {{ current_loop_sorted_sequences.each do |sequence| }}
-    <!--FIXME: try not to use the value method to resolve the promise-->
-    <:sequences:controls model="{{ sequence }}" audio_context="{{ audio_context }}" tempo="{{ current_loop._tempo.value }}" />
-  {{ end }}

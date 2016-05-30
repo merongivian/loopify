@@ -2,28 +2,40 @@
   Explore Loops
 
 <:Body>
-  <h1>{{ params._username }}'s loops</h1>
-  <table class="table" id="loop-index">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Sequences</th>
-        <th>Size</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ store.users.where(name: params._username).first._loops.each do |current_loop| }}
-        <tr>
-          <td>{{ current_loop._title }}</td>
-          <td>{{ current_loop._sequences.length }}</td>
-          <td>{{ current_loop._size }}</td>
-          <td>
-            <button type="button" e-click="fork_loop(current_loop)" class="btn btn-primary btn-sm">
-              Copy loop
-            </button>
-          </td>
-        </tr>
-      {{ end }}
-    </tbody>
-  </table>
+  <:banner title="Explore Loops" description="Find and fork a user's loops" />
+
+  <div class="elements-content">
+    <div class="container">
+
+
+      <h1>{{ params._username }}'s loops</h1>
+      <table class="table" id="loop-index">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Sequences</th>
+            <th>Size</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ store.users.where(name: params._username).first._loops.each do |current_loop| }}
+            <tr>
+              <td>{{ current_loop._title }}</td>
+              <td>{{ current_loop._sequences.length }}</td>
+              <td>{{ current_loop._size }}</td>
+              <td>
+                <button type="button" e-click="fork_loop(current_loop)" class="btn btn-primary btn-sm">
+                  Copy loop
+                </button>
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+
+
+
+
+    </div>
+  </div>

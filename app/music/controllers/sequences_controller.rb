@@ -18,12 +18,18 @@ module Music
       #@audio_sequence.smoothing = 0.4
       #@audio_sequence.custom_wave_type([-0.8, 1, 0.8, 0.8, -0.8, -0.8, -1])
 
-      @audio_sequence.loop_mode = true
+      @audio_sequence.loop_mode = _loop_mode
       @audio_sequence.play
     end
 
     def stop
       @audio_sequence.stop
+    end
+
+    def reload
+      return if @audio_sequence.nil?
+      @audio_sequence.oscillator = nil
+      play
     end
 
     def set_volume

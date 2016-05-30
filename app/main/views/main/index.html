@@ -2,10 +2,30 @@
   News Feed
 
 <:Body>
-  <h1>News Feed</h1>
+  {{ if Volt.fetch_current_user }}
+    <:banner title="News Feed" description="Check what's going in your network" />
+    <div class="elements-content">
+      <div class="container">
+        <h1>News Feed</h1>
 
-  {{ current_user_news.each do |n| }}
-    <p>
-      {{ n[:friend] }} {{ n[:news] }} on {{ n[:date] }}
-    </p>
+        {{ current_user_news.each do |n| }}
+          <p>
+            {{ n[:friend] }} {{ n[:news] }} on {{ n[:date] }}
+          </p>
+        {{ end }}
+      </div>
+    </div>
+  {{ else }}
+    <:parallax image="http://i2.wp.com/blogs.perficient.com/digitaltransformation/files/2011/06/iStock_000014355733Small.jpg" title="Create loops" description="As little pieces of music"/>
+    <:parallax image="http://www.squeakygate.org.uk/wp-content/uploads/2015/12/music-colorful-vector-art.jpg" title="Share with others" description="In our little network"/>
+    <:parallax image="https://hackadaycom.files.wordpress.com/2015/01/logic-noise.jpg?w=800" title="Create 8bits sounds" description="As little pieces of music"/>
   {{ end }}
+
+<:Parallax>
+  <section class="parallax-content text-center" data-stellar-background-ratio="0.4" style="background: url('{{ attrs.image }}') no-repeat center fixed; background-size: cover">
+    <div class="overlay"></div>
+    <div class="container">
+      <h4>{{ attrs.title }}</h4>
+      <p>{{ attrs.description }}</p>
+    </div>
+  </section>
