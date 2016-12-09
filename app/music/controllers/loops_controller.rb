@@ -1,3 +1,4 @@
+require 'browser/support'
 require 'opal-music'
 require 'music/lib/sequence_decorator'
 
@@ -41,7 +42,7 @@ module Music
     end
 
     def audio_context
-      @audio_context ||= Music.audio_context
+      @audio_context ||= Browser::Audio::Context.new
     end
 
     def current_loop

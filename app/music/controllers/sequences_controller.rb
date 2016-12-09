@@ -1,3 +1,4 @@
+require 'browser/support'
 require 'opal-music'
 
 require 'music/lib/sequence_decorator'
@@ -33,8 +34,7 @@ module Music
     end
 
     def set_volume
-      #TODO extract this calc from here and from SequenceDecorator (DRY)
-      @audio_sequence.volume = _volume.to_i / 100 / 2
+      @sequence.gain.gain = _volume.to_i / 100 / 2
     end
 
     def set_effect
@@ -47,6 +47,7 @@ module Music
       _notes.reverse.each(&:destroy)
 
       changed_notes.each { |n| _notes.create(value: n) }
+
       reload_audio_sequence(@audio_sequence)
     end
 
