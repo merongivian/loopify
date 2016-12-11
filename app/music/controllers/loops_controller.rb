@@ -19,7 +19,7 @@ module Music
 
       sequence_decorators.each do |decorator|
         Music::PlaySchedule.new(
-          decorator.audio(*audio_constants),
+          decorator.audio_seq(*audio_constants),
           decorator.cell_values.take(current_size)
         ).start
       end

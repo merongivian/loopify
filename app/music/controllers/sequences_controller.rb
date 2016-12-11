@@ -12,7 +12,7 @@ module Music
     end
 
     def play(audio_context, tempo)
-      @audio_sequence = sequence_decorator.audio(audio_context, tempo.to_i)
+      @audio_sequence = sequence_decorator.audio_seq(audio_context, tempo.to_i)
 
       #NOTE: only works when defined after play
       #@audio_sequence.staccato  = 0.05

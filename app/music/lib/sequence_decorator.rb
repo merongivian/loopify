@@ -21,7 +21,7 @@ class SequenceDecorator
     @db_record._cells.map(&:_value)
   end
 
-  def audio(audio_context, tempo)
+  def audio_seq(audio_context, tempo)
     audio_sequence = Music::Sequence.new(audio_context,
                                          tempo,
                                          complete_notes(true))
