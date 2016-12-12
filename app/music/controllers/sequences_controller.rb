@@ -55,6 +55,14 @@ module Music
       local_audio_sequence.notes = sequence_decorator.complete_notes(true)
     end
 
+    def available_key_notes
+      #@available_key_notes ||= Music::Note::OFFSETS.keys.product((2..7).to_a).map(&:join)
+    end
+
+    def stop_live_note
+      p "stoped"
+    end
+
     private
 
     def sequence_decorator

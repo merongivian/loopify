@@ -7,11 +7,10 @@ module Music
     before_action :require_login, only: :editor
 
     def editor
-
     end
 
     def grid
-
+      init_key_down_handler
     end
 
     def play_grid
@@ -55,6 +54,22 @@ module Music
 
     def current_loop_sorted_sequences
       current_loop._sequences.sort_by{ |sequence| sequence._title }
+    end
+
+    def init_key_down_handler
+      %x{
+        document.onkeypress = function(evt) {
+          evt = evt || window.event;
+          var charCode = evt.keyCode || evt.which;
+          #{ note_played = key_player.play `String.fromCharCode(charCode)`
+          flash.__notes << note_played
+          };
+        };
+      }
+    end
+
+    def key_player
+      @key_player ||= Music::KeyboardSynth.new(audio_context)
     end
   end
 end
