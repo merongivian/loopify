@@ -8,11 +8,22 @@
       <div class="container">
         <h1>News Feed</h1>
 
-        {{ current_user_news.each do |n| }}
-          <p>
-            {{ n[:friend] }} {{ n[:news] }} on {{ n[:date] }}
-          </p>
-        {{ end }}
+        <div id="user-news">
+          {{ current_user_news.each do |n| }}
+            <div class="news-element">
+              <div class="friend">
+                <img class="avatar" src="http://www.tunegociord.com/wp-content/themes/pointfinder/images/empty_avatar.jpg" alt="avatar"/>
+                <div class="name">
+                  {{ n[:friend] }}
+                </div>
+              </div>
+
+              <div class="detail">
+                {{ n[:news] }} on {{ n[:date] }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
       </div>
     </div>
   {{ else }}

@@ -13,3 +13,31 @@ body {
   margin-left: $elements-spacing;
   margin-right: $elements-spacing;
 }
+
+.avatar {
+  width: 80px;
+}
+
+#user-news {
+  padding: 55px;
+}
+
+.news-element {
+  display: inline-block;
+  margin: 13px;
+  width: 100%;
+
+  .friend {
+    float: left;
+    margin: 13px;
+
+    .name {
+      width: 80px;
+      text-align: center;
+    }
+  }
+
+  .detail {
+    margin: 13px;
+  }
+}
