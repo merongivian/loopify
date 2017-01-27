@@ -5,6 +5,7 @@ require 'date'
 module Main
   class MainController < Volt::ModelController
     before_action :require_login, only: [:loops, :explore, :explore_loops]
+    before_action :disable_keyboard_notes
 
     def index
       # Add code for when the index view is loaded
@@ -27,6 +28,19 @@ module Main
     end
 
     private
+
+    def disable_keyboard_notes
+      # NOTE: only works after the second click, no idea why
+      %x{
+        $('a').click(function() {
+          console.log('i clicked a link');
+          // disable keyboard notes play on other pages that are not the loop page
+          if (window.location.pathname.split("/")[2] != 'loops') {
+            document.onkeypress = null;
+          };
+        });
+      }
+    end
 
     def add_loop
       if page._loop_title.blank?
