@@ -102,7 +102,11 @@ module Main
 
     def current_user_news
       current_user_friends.flat_map do |friend|
-        friend._news.all.value.map do |n|
+
+        # This forces news data retrieve, again forgive me jebus
+        store._news.all
+        store._news.where(user_id: friend.id).all
+        store._news.where(user_id: friend.id).map do |n|
           { friend: friend._name, news: n._value, date: n._date }
         end
       end
