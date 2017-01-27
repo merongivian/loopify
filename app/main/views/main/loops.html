@@ -75,33 +75,34 @@
         </div>
       </div>
 
-      <table class="table" id="loop-index">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Sequences</th>
-            <th>Size</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{ Volt.current_user._loops.each do |current_loop| }}
+      {{ if Volt.current_user._loops.empty? }}
+        <p class="empty-message top-margin">You don't have any loops currently</p>
+      {{ else }}
+        <table class="table" id="loop-index">
+          <thead>
             <tr>
-              <td><a href="{{ url_for component: 'music', controller: 'loops', action: 'editor', username: user_name, title: current_loop._title  }}">{{ current_loop._title }}</a></td>
-              <td>{{ current_loop._sequences.length }}</td>
-              <td>{{ current_loop._size }}</td>
-              <td>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                  Delete
-                </button>
-              </td>
+              <th>Name</th>
+              <th>Sequences</th>
+              <th>Size</th>
+              <th>Actions</th>
             </tr>
-            <:deleting delete_loop="{{ current_loop }}" />
-          {{ end }}
-        </tbody>
-      </table>
-
-
-
+          </thead>
+          <tbody>
+            {{ Volt.current_user._loops.each do |current_loop| }}
+              <tr>
+                <td><a href="{{ url_for component: 'music', controller: 'loops', action: 'editor', username: user_name, title: current_loop._title  }}">{{ current_loop._title }}</a></td>
+                <td>{{ current_loop._sequences.length }}</td>
+                <td>{{ current_loop._size }}</td>
+                <td>
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              <:deleting delete_loop="{{ current_loop }}" />
+            {{ end }}
+          </tbody>
+        </table>
+      {{ end }}
     </div>
   </div>

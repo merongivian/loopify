@@ -6,36 +6,35 @@
 
   <div class="elements-content">
     <div class="container">
-
-
       <h1>{{ params._username }}'s loops</h1>
-      <table class="table" id="loop-index">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Sequences</th>
-            <th>Size</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{ store.users.where(name: params._username).first._loops.each do |current_loop| }}
+
+      {{ if store.users.where(name: params._username).first._loops.empty? }}
+        <p class="empty-message top-margin">{{ params._username }} doesn't have any loops currently</p>
+      {{ else }}
+        <table class="table" id="loop-index">
+          <thead>
             <tr>
-              <td>{{ current_loop._title }}</td>
-              <td>{{ current_loop._sequences.length }}</td>
-              <td>{{ current_loop._size }}</td>
-              <td>
-                <button type="button" e-click="fork_loop(current_loop)" class="btn btn-primary btn-sm">
-                  Copy loop
-                </button>
-              </td>
+              <th>Name</th>
+              <th>Sequences</th>
+              <th>Size</th>
+              <th>Actions</th>
             </tr>
-          {{ end }}
-        </tbody>
-      </table>
-
-
-
-
+          </thead>
+          <tbody>
+            {{ store.users.where(name: params._username).first._loops.each do |current_loop| }}
+              <tr>
+                <td>{{ current_loop._title }}</td>
+                <td>{{ current_loop._sequences.length }}</td>
+                <td>{{ current_loop._size }}</td>
+                <td>
+                  <button type="button" e-click="fork_loop(current_loop)" class="btn btn-primary btn-sm">
+                    Copy loop
+                  </button>
+                </td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      {{ end }}
     </div>
   </div>

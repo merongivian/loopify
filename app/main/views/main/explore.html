@@ -6,43 +6,41 @@
   <div class="elements-content">
     <div class="container">
 
-
       <h1>Users List</h1>
-      <table class="table" id="loop-index">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Loops</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{ store.users.each do |user| }}
-            {{ if user._name != Volt.current_user._name.value }}
-              <tr>
-                <td><a href="{{ url_for component: 'main', controller: 'main', action: 'explore_loops', username: user._name }}">{{ user._name }}</a></td>
-                <td>{{ user._loops.all.length }}</td>
-                <td>
-                  {{ if current_user_friends_names.include?(user._name) }}
-                    <button type="button" e-click="unfollow(user)" class="btn btn-primary btn-sm">
-                      Unfollow
-                    </button>
-                  {{ else }}
-                    <button type="button" e-click="follow(user)" class="btn btn-primary btn-sm">
-                      Follow
-                    </button>
-                  {{ end }}
-                </td>
-              </tr>
+      {{ if store.users.empty? }}
+        <p class="empty-message top-margin">Theres no users in the system</p>
+      {{ else }}
+        <table class="table" id="loop-index">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Loops</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ store.users.each do |user| }}
+              {{ if user._name != Volt.current_user._name.value }}
+                <tr>
+                  <td><a href="{{ url_for component: 'main', controller: 'main', action: 'explore_loops', username: user._name }}">{{ user._name }}</a></td>
+                  <td>{{ user._loops.all.length }}</td>
+                  <td>
+                    {{ if current_user_friends_names.include?(user._name) }}
+                      <button type="button" e-click="unfollow(user)" class="btn btn-primary btn-sm">
+                        Unfollow
+                      </button>
+                    {{ else }}
+                      <button type="button" e-click="follow(user)" class="btn btn-primary btn-sm">
+                        Follow
+                      </button>
+                    {{ end }}
+                  </td>
+                </tr>
+              {{ end }}
             {{ end }}
-          {{ end }}
-        </tbody>
-      </table>
-
-
-
-
-
+          </tbody>
+        </table>
+      {{ end }}
     </div>
   </div>
 

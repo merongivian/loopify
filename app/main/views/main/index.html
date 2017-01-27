@@ -9,19 +9,23 @@
         <h1>News Feed</h1>
 
         <div id="user-news">
-          {{ current_user_news.each do |n| }}
-            <div class="news-element">
-              <div class="friend">
-                <img class="avatar" src="http://www.tunegociord.com/wp-content/themes/pointfinder/images/empty_avatar.jpg" alt="avatar"/>
-                <div class="name">
-                  {{ n[:friend] }}
+          {{ if current_user_news.empty? }}
+            <p class="empty-message">You don't have any news currently</p>
+          {{ else }}
+            {{ current_user_news.each do |n| }}
+              <div class="news-element">
+                <div class="friend">
+                  <img class="avatar" src="http://www.tunegociord.com/wp-content/themes/pointfinder/images/empty_avatar.jpg" alt="avatar"/>
+                  <div class="name">
+                    {{ n[:friend] }}
+                  </div>
+                </div>
+
+                <div class="detail">
+                  {{ n[:news] }} on {{ n[:date] }}
                 </div>
               </div>
-
-              <div class="detail">
-                {{ n[:news] }} on {{ n[:date] }}
-              </div>
-            </div>
+            {{ end }}
           {{ end }}
         </div>
       </div>
