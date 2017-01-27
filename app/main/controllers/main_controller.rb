@@ -112,6 +112,11 @@ module Main
       end
 
       Volt.current_user._news.create(value: "copied #{copied_loop._title}", date: Date.today.to_s)
+
+      redirect_to "/loops"
+
+      flash._successes << 'The loop has been succesfully forked'
+      `document.getElementById("loop-modal-close").click()`
     end
 
     def current_user_news
