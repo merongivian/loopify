@@ -5,6 +5,7 @@ require 'music/lib/sequence_decorator'
 module Music
   class LoopsController < Volt::ModelController
     before_action :require_login, only: :editor
+    after_action :disable_keyboard_notes, only: :editor
 
     def editor
     end
@@ -25,6 +26,14 @@ module Music
     end
 
     private
+
+    def disable_keyboard_notes
+      %x{
+        $('a').click(function() {
+          document.onkeypress = null;
+        });
+      }
+    end
 
     def current_cells(sequence)
       sequence._cells.take(current_size)
