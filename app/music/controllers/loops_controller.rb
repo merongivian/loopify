@@ -1,4 +1,4 @@
-require 'browser/support'
+require 'opal-browser'
 require 'opal-music'
 require 'music/lib/sequence_decorator'
 

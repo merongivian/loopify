@@ -1,4 +1,29 @@
 GIT
+  remote: https://github.com/merongivian/opal-audio
+  revision: 3726e0ac892b02292e0870732cf1ee96135710ff
+  specs:
+    opal-audio (0.0.1)
+      opal (>= 0.7.0, <= 0.9.0)
+      opal-rspec (~> 0.5)
+
+GIT
+  remote: https://github.com/merongivian/opal-browser
+  revision: 815348e913ea79d65044db4dee3bbeea87be763d
+  specs:
+    opal-browser (0.2.0)
+      opal
+      paggio
+
+GIT
+  remote: https://github.com/merongivian/opal-music
+  revision: ca96a67df0b9c91e200ce9c904e94042728ce6e9
+  specs:
+    opal-music (0.0.1)
+      opal (>= 0.7.0, <= 0.9.0)
+      opal-audio
+      opal-browser
+
+GIT
   remote: https://github.com/voltrb/volt
   revision: f942b92385adbc894ee4a37903ee6a9c1a65e9a4
   specs:
@@ -15,28 +40,6 @@ GIT
       sass (~> 3.4.15)
       sprockets-helpers (~> 1.2.1)
       thor (~> 0.19.0)
-
-PATH
-  remote: ../opal-audio
-  specs:
-    opal-audio (0.0.1)
-      opal (>= 0.7.0, <= 0.9.0)
-      opal-rspec (~> 0.5)
-
-PATH
-  remote: ../opal-browser
-  specs:
-    opal-browser (0.2.0)
-      opal
-      paggio
-
-PATH
-  remote: ../opal-music
-  specs:
-    opal-music (0.0.1)
-      opal (>= 0.7.0, <= 0.9.0)
-      opal-audio
-      opal-browser
 
 GEM
   remote: https://rubygems.org/
@@ -213,5 +216,8 @@ DEPENDENCIES
   volt-mongo (~> 0.2.0)
   volt-user_templates (~> 0.4.0)
 
+RUBY VERSION
+   ruby 2.1.2p95
+
 BUNDLED WITH
-   1.12.5
+   1.14.3

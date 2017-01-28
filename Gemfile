@@ -25,10 +25,10 @@ gem 'volt-mailer', '~> 0.1.1'
 #
 # Message Bus encryption is not supported on Windows at the moment.
 #
-gem 'opal-audio', path: '../opal-audio'
-gem 'opal-music', path: '../opal-music'
 
-gem 'opal-browser', path: '../opal-browser'
+gem 'opal-browser', git: 'https://github.com/merongivian/opal-browser'
+gem 'opal-audio', git: 'https://github.com/merongivian/opal-audio'
+gem 'opal-music', git: 'https://github.com/merongivian/opal-music'
 
 platform :ruby, :jruby do
   gem 'rbnacl', require: false
