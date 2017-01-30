@@ -28,7 +28,7 @@ gem 'volt-mailer', '~> 0.1.1'
 
 gem 'opal-browser', git: 'https://github.com/merongivian/opal-browser'
 gem 'opal-audio', git: 'https://github.com/merongivian/opal-audio'
-gem 'opal-music', path: '../opal-music'
+gem 'opal-music', git: 'https://github.com/merongivian/opal-music'
 
 platform :ruby, :jruby do
   gem 'rbnacl', require: false
