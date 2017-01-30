@@ -13,12 +13,6 @@ module Music
 
     def play(audio_context, tempo)
       @audio_sequence = sequence_decorator.audio_seq(audio_context, tempo.to_i)
-
-      #NOTE: only works when defined after play
-      #@audio_sequence.staccato  = 0.05
-      #@audio_sequence.smoothing = 0.4
-      #@audio_sequence.custom_wave_type([-0.8, 1, 0.8, 0.8, -0.8, -0.8, -1])
-
       @audio_sequence.loop_mode = _loop_mode
       @audio_sequence.play
     end

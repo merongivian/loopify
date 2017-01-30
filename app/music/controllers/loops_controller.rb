@@ -16,12 +16,13 @@ module Music
 
     def play_grid
       audio_constants = [audio_context, current_loop._tempo.value.to_i]
+      current_time = @audio_context.current_time
 
       sequence_decorators.each do |decorator|
         Music::PlaySchedule.new(
           decorator.audio_seq(*audio_constants),
           decorator.cell_values.take(current_size)
-        ).start
+        ).start(current_time)
       end
     end
 
